@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Service;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -20,5 +21,13 @@ class DatabaseSeeder extends Seeder
             'email' => 'dev@dev.com',
             'role' => 'admin',
         ]);
+
+        for ($i=1; $i<=10; $i++) {
+            Service::factory()->create([
+                'name' => 'Service ' . $i,
+                'description' => 'Service description ' . $i
+            ]);
+        }
+
     }
 }
